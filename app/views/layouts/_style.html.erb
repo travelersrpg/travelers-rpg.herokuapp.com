@@ -1,0 +1,133 @@
+<head>
+  <title>Travelers Rpg</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= favicon_link_tag('favicon.ico') %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+</head>
+<script>
+  $(document).ready(function(){
+    $('.slideshow').bxSlider();
+  });
+</script>
+<style>
+body {
+  background-color: #0C0C0C;
+  margin: 0;
+}
+.bx-wrapper{
+  border: 0px;
+}
+header{
+  z-index: 10;
+  height: 64px;
+  background-color: #0C0C0C;
+  width: 100%;
+  text-align: center;
+  margin-right: 40px;
+  z-index: 2;
+}
+ul {
+  　　overflow:hidden;
+  　　list-style:none;
+  　　margin: 0 auto;
+  　　z-index: 20;
+}
+
+ul li {
+  display: inline-block;
+  padding: 26px 10px 20px 10px;
+}
+.btn {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.btn4{
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display:inline-block;
+}
+
+.btn4::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: #3367ff;
+  display: block;
+  -webkit-transform-origin: right top;
+  -ms-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+  transition: transform 0.4s cubic-bezier(1, 0, 0, 1)
+}
+.btn4:hover::before {
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1)
+}
+
+.btn2{
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display:inline-block;
+  border-bottom: 2px solid #3367ff;
+
+}
+
+.logo{
+  margin: 10px;
+}
+
+.newsfeed{
+  float: left;
+  width: 20%;
+  background-color: #313131;
+  margin-left: 10px;
+  height: 100px;
+  padding: 10px;
+  padding-bottom: 30px;
+  color: #ffffff;
+}
+
+.newsfeed a{
+  color: #ffffff;
+}
+
+.links {
+  float: right;
+  width: 20%;
+  background-color: #313131;
+  margin-right: 10px;
+  height: 100px;
+  padding: 5px;
+  padding-bottom: 30px;
+  color: #ffffff;
+}
+
+.content {
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: #313131;
+  padding: 5px;
+  color: #ffffff;
+  padding-bottom: 30px;
+}
+</style>
+

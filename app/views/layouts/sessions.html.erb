@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Travelers Rpg</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag('favicon.ico') %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function(){
+      $('.slideshow').bxSlider();
+    });
+  </script>
+  <style>
+body {
+  background-color: #0C0C0C;
+  margin: 0;
+}
+.bx-wrapper{
+  border: 0px;
+}
+header{
+  z-index: 10;
+  height: 64px;
+  background-color: #0C0C0C;
+  width: 100%;
+  text-align: center;
+  margin-right: 40px;
+  z-index: 2;
+}
+ul {
+  　　overflow:hidden;
+  　　list-style:none;
+  　　margin: 0 auto;
+  　　z-index: 20;
+}
+
+ul li {
+  display: inline-block;
+  padding: 26px 10px 20px 10px;
+}
+a {
+  color: #fff;
+    　text-transform: uppercase;
+}
+.btn4{
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display:inline-block;
+}
+
+.btn4::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: #3367ff;
+  display: block;
+  -webkit-transform-origin: right top;
+  -ms-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+  transition: transform 0.4s cubic-bezier(1, 0, 0, 1)
+}
+.btn4:hover::before {
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1)
+}
+
+.btn2{
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display:inline-block;
+  border-bottom: 2px solid #3367ff;
+
+}
+
+.logo{
+  margin: 10px;
+}
+  </style>
+  <body>
+    <div class="logo"><img class="logo-img" src="assets/logo.png" width="100" height="100"></div>
+    <div class="header">
+      <header>
+        <ul>
+          <li><a href="/" class="btn2">ホーム</a></li>
+          <li><a href="" class="btn4">運営メンバー</a></li>
+          <li><a href="" class="btn4">ストーリー</a></li>
+          <li><a href="" class="btn4">サーバシステム</a></li>
+          <% if logged_in? %>
+            <li><%= link_to "ログアウト", logout_path, method: :delete,class: "btn4" %></li>
+            <li><a href="/posts" class="btn4">管理者用ダッシュボード</a></li>
+          <% else %>
+            <li><a href="/login" class="btn4">ログイン</a></li>
+          <% end %>
+        </ul>
+      </header>
+    </div>
+    <%= yield %>
+  </body>
+</html>

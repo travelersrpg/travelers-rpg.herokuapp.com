@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<h1><%= @post.title %></h1>
+</p>
+
+<p>
+  <strong></strong>
+  <%= @post.content %>
+</p>
+
+<p>
+  <strong>投稿者:</strong>
+  <%= @post.user %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %>
