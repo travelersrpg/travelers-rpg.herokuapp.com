@@ -1,11 +1,12 @@
-<div class="logo"><%= image_tag "logo.png", class: "logo-img", height: "100", width: "100" %></div>
+<%= image_tag "logo.png", class: "logo", height: "100", width: "100" %>
+<p class="title" style="font-size: 80px;color: #ffffff;float: right;margin-top: 39px;margin-right: calc(100% - 780px);">Travelers RPG</p>
 <div class="header">
   <header>
     <ul>
       <li><a href="/" class="btn2 btn">ホーム</a></li>
-      <li><a href="" class="btn4 btn">運営メンバー</a></li>
-      <li><a href="" class="btn4 btn">ストーリー</a></li>
-      <li><a href="" class="btn4 btn">サーバシステム</a></li>
+      <li><a href="#" class="btn4 btn">運営メンバー</a></li>
+      <li><a href="#" class="btn4 btn">ストーリー</a></li>
+      <li><a href="#" class="btn4 btn">サーバシステム</a></li>
       <% if logged_in? %>
         <li><%= link_to "ログアウト", logout_path, method: :delete,class: "btn4" %></li>
         <li><a href="/posts" class="btn4 btn">管理者用ダッシュボード</a></li>
@@ -14,19 +15,23 @@
       <% end %>
     </ul>
   </header>
+  <script>
+    $(document).ready(function(){
+      $('.slideshow').bxSlider();
+    });
+  </script>
   <div class="slideshow">
     <div class="slideshow-div"><%= image_tag "slideshow1.png" %></div>
     <div class="slideshow-div"><%= image_tag "slideshow2.png" %></div>
   </div>
 
   <div class="newsfeed">
-      <% @news.each do |n| %>
-        <h4><a href="posts/<%= n.id %>"><%= n.title %></a><br></h4>
-      <% end %>
+    <% @news.each do |n| %>
+      <h4><a href="posts/<%= n.id %>"><%= n.title %></a><br></h4>
+    <% end %>
   </div>
   <div class="links">
     links<br>
     links
   </div>
 </div>
-
