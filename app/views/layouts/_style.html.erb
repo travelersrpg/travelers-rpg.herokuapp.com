@@ -9,6 +9,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 </head>
+<script>
+  $(document).ready(function(){
+    $('.slideshow').bxSlider();
+  });
+</script>
 <style>
 body {
   background-color: #0C0C0C;
@@ -31,8 +36,6 @@ ul {
   list-style:none;
   margin: 0 auto;
   z-index: 20;
-  width: 64px;
-  height: 100%
 }
 
 ul li {
@@ -90,7 +93,7 @@ ul li {
 
 .logo{
   margin: 10px;
-  width: 100px;
+  /* width: 100px; */
 }
 
 .newsfeed{
@@ -111,7 +114,7 @@ ul li {
 .links {
   float: right;
   width: 20%;
-  background-color: #313131;
+  /* background-color: #313131; */
   margin-right: 10px;
   height: 100px;
   padding: 5px;
@@ -128,18 +131,9 @@ ul li {
   padding-bottom: 30px;
 }
 
-.title {
-  color: #ffffff;
-  font-size: 80px;
-  font-weight: 800;
-  float: right;
-  margin-top: 40px;
-  margin-right: calc(100% - 800px);
-}
-
-.slideshow {
+/* .slideshow {
   height: calc(100%-100px);
-}
+} */
 
 
 </style>
