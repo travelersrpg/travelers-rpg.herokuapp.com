@@ -5,8 +5,8 @@
     <ul>
       <li><a href="/" class="btn2 btn">ホーム</a></li>
       <li><a href="#" class="btn4 btn">運営メンバー</a></li>
-      <li><a href="#" class="btn4 btn">ストーリー</a></li>
-      <li><a href="#" class="btn4 btn">サーバシステム</a></li>
+      <li><a href="/story" class="btn4 btn">ストーリー</a></li>
+      <li><a href="/server_system" class="btn4 btn">サーバシステム</a></li>
       <% if logged_in? %>
         <li><%= link_to "ログアウト", logout_path, method: :delete,class: "btn4" %></li>
         <li><a href="/posts" class="btn4 btn">管理者用ダッシュボード</a></li>
@@ -15,10 +15,12 @@
       <% end %>
     </ul>
   </header>
+  <% if @show_slideshow %>
   <div class="slideshow">
     <div class="slideshow-div"><%= image_tag "slideshow1.png", :class => "slideshow" %></div>
     <div class="slideshow-div"><%= image_tag "slideshow2.png", :class => "slideshow" %></div>
   </div>
+  <% end %>
 
   <div class="newsfeed">
     <% @news.each do |n| %>
