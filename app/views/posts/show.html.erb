@@ -4,10 +4,7 @@
 <h1><%= @post.title %></h1>
 </p>
 
-<p>
-  <strong></strong>
-  <%=safe_join(@post.content.split("\n"),tag(:br)).html_safe %>
-</p>
+<%= safe_join(@post.content.split("\n"),tag(:br)).html_safe %>
 
 <p>
   <strong>投稿者:</strong>
