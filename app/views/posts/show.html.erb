@@ -13,5 +13,6 @@
   <strong>投稿者:</strong>
   <%= @post.user %>
 </p>
-
+<% if logged_in? %>
 <%= link_to 'Edit', edit_post_path(@post) %>
+<% end %>
