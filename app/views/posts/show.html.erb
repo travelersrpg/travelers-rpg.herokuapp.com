@@ -6,7 +6,7 @@
 
 <p>
   <strong></strong>
-  <%= @post.content %>
+  <%=safe_join(@post.content.split("\n"),tag(:br)) %>
 </p>
 
 <p>

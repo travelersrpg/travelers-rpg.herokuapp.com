@@ -4,6 +4,7 @@ Travelers RPG</p>
   <header>
     <ul>
       <li><a href="/" class="btn2 btn">ホーム</a></li>
+      <li><a href="/posts/1" class="btn4 btn">運営募集中</a></li>
       <li><a href="/members" class="btn4 btn">運営メンバー</a></li>
       <li><a href="/story" class="btn4 btn">ストーリー</a></li>
       <li><a href="/server_system" class="btn4 btn">サーバシステム</a></li>
@@ -18,13 +19,13 @@ Travelers RPG</p>
   <% if @show_slideshow %>
   <div class="slideshow">
     <div class="slideshow-div"><%= image_tag "slideshow1.png", :class => "slideshow" %></div>
-    <div class="slideshow-div"><%= image_tag "slideshow2.png", :class => "slideshow" %></div>
+    <div class="slideshow-div"><%= image_tag "slideshow2.png", :class => "slideshow", :style => "display:none" %></div>
   </div>
   <% end %>
 
   <div class="newsfeed">
     <% @news.each do |n| %>
-      <h4><a href="posts/<%= n.id %>"><%= n.title %></a><br></h4>
+      <h4><a href="/posts/<%= n.id %>"><%= n.title %></a><br></h4>
     <% end %>
   </div>
   <div class="links">
